@@ -1,0 +1,1 @@
+web: gunicorn Ecommerece_Website.wsgi

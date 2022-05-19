@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="container my-4">
+	<!-- Featured Products -->
+    {% comment %} {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %} {% endcomment %}
+	<h3 class="my-4 border-bottom pb-1">SignUp</h3>
+	<table class="table table-bordered">
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_table}}
+            {% comment %} {{form.non_field_error}}  {% endcomment %}
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="Register" class="btn btn-primary" />
+				</td>
+			</tr>
+		</form>
+      
+	</table>
+</main>
+{% endblock %}
